@@ -1,0 +1,42 @@
+1  a)
+
+A=(1,1,0,1,1,0,1,1)
+B=(0,1,1,1,1,1,1,0)
+C=(1,0,1,1,0,1,1,1)
+
+def findInter(s1,s2):
+    inter=0
+    for i in range(len(s1)):
+        if(s1[i]==s2[i]==1):
+            inter=inter+1
+    return inter        
+def findUnion(s1,s2):
+    union=0
+    for i in range(len(s1)):
+        if(s1[i]==1 or s2[i]==1):
+            union=union+1
+    return union
+
+in1=findInter(A,B)
+un=findUnion(A,B)
+print(in1)
+print(un)
+jacind=in1/un
+jacdist=1-jacind
+print("Jaccard Distance between A and B is "+str(jacind))
+
+in1=findInter(B,C)
+un=findUnion(B,C)
+print(in1)
+print(un)
+jacind=in1/un
+jacdist=1-jacind
+print("Jaccard Distance between B and C is "+str(jacind))
+
+in1=findInter(A,C)
+un=findUnion(A,C)
+print(in1)
+print(un)
+jacind=in1/un
+jacdist=1-jacind
+print("Jaccard Distance between A and C is "+str(jacind))
